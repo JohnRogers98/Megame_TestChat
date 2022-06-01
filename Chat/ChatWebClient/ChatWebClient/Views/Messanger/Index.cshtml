@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<String>
+@{
+
+    ViewData["Title"] = "Messanger - Index";
+}
+
+<div id="usersList">  
+    <h3>Chats : </h3>
+
+    <h3>Unread messages : @ViewBag.UnreadMessagesCount</h3>
+
+    <ul class="list-group">
+        
+        @foreach(var id in Model)
+        {
+            <form method="get" asp-action="Dialog">
+                <li class="list-group-item">
+                    <a asp-action="Chat" asp-route-chatId=@id>John</a>
+                </li>
+            </form>            
+        }
+    </ul>
+</div> 
